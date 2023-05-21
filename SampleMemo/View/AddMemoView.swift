@@ -21,7 +21,6 @@ struct AddMemoView: View {
                 .textFieldStyle(.roundedBorder)
                 .font(.title)
             TextEditor(text: $content)
-                .multilineTextAlignment(.center)
                 .border(Color.gray, width: 1)
                 .font(.body)
             Spacer()

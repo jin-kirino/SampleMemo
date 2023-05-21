@@ -41,6 +41,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteMemo)
             }
             .navigationTitle("メモ")
             .navigationBarTitleDisplayMode(.automatic)
@@ -52,6 +53,14 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    // 削除時の処理
+    private func deleteMemo(offsets: IndexSet) {
+        offsets.forEach { index in
+            viewContext.delete(fetchedMemoList[index])
+        }
+    // 保存を忘れない
+        try? viewContext.save()
     }
 }
 

@@ -44,6 +44,13 @@ struct ContentView: View {
             }
             .navigationTitle("メモ")
             .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddMemoView()) {
+                        Text("新規作成")
+                    }
+                }
+            }
         }
     }
 }

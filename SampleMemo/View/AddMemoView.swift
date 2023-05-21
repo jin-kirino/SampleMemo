@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddMemoView: View {
     // CoreDataのデータが格納されている変数
-    // 
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     @State private var title: String = ""
@@ -28,7 +27,9 @@ struct AddMemoView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {addMemo()}) {
+                Button(action: {
+                    addMemo()
+                }) {
                     Text("保存")
                 }
             }
